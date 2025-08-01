@@ -1,4 +1,4 @@
-<TMU|<tuple|1.1.0|2025.0.14>>
+<TMU|<tuple|1.1.0|2025.0.12>>
 
 <style|<tuple|book|number-europe|preview-ref|smart-ref>>
 
@@ -974,9 +974,7 @@
   </lemma>
 
   <\big-figure>
-    <padded-center|<tikzpicture|[scale=4] <clip>(0.4,-0.4) rectangle (-1.2,1.2); <draw*|rotate=30, very thick> (0,0) ellipse (0.5 and 0.7); <node*|tokens=1> (noeud1) at (-0.45,-0.1) [label=right:<math|x>] ; <node*|tokens=1> (noeud2) at (-0.6, 0.8) [label=above left:<math|y>] ; <draw*|\<less\>-\<gtr\>, thick> (noeud1) -- (noeud2) node[midway, below left] <math|<around|\<\|\|\>|y-x|\<\|\|\>>>; <node*|tokens=1> (noeud3) at (-60:-0.7) [label=below right:<math|\<Pi\><rsub|<cX>><around|(|y|)>>] ; <draw*|\<less\>-\<gtr\>, thick> (noeud2) -- (noeud3) node[midway, above right] <math|<around|\<\|\|\>|y-\<Pi\><rsub|<cX>><around|(|y|)>|\<\|\|\>>>; <draw*|\<less\>-\<gtr\>, thick> (noeud1) -- (noeud3) node[midway, right] <math|<around|\<\|\|\>|\<Pi\><rsub|<cX>><around|(|y|)>-x|\<\|\|\>>>; <node>at (0.15,-0.2) <math|<cX>>;>>
-
-    <label|fig:pythagore>
+    <image|pythagore.pdf||||>
   </big-figure|Illustration of Lemma <reference|lem:todonow>.>
 
   Unless specified otherwise all the proofs in this chapter are taken from <cite|Nes04> (with slight simplification in some cases).
@@ -994,9 +992,7 @@
   This procedure is illustrated in Figure <reference|fig:pgd>. We prove now a rate of convergence for this method under the above assumptions.
 
   <\big-figure>
-    <padded-center|<tikzpicture|[scale=3] <draw*|rotate=30, very thick> (0,0) ellipse (0.5 and 0.7); <node*|tokens=1> (noeud1) at (-0.25,0.1) [label=below right:<math|x<rsub|t>>] ; <node*|tokens=1> (noeud2) at (-0.8, 0.9) [label=above left:<math|y<rsub|t+1>>] ; <draw*|-\<gtr\>, thick> (noeud1) -- (noeud2) node[midway, left] <tabular*|<tformat|<cwith|1|-1|1|1|cell-halign|c>|<cwith|1|-1|1|1|cell-lborder|0ln>|<cwith|1|-1|1|1|cell-rborder|0ln>|<cwith|1|-1|1|-1|cell-valign|c>|<table|<row|<cell|>>|<row|<cell|gradient step>>|<row|<cell|<eqref|eq:PGD1>>>>>>; <node*|tokens=1> (noeud3) at (-60:-0.7) [label=below right:<math|x<rsub|t+1>>] ; <draw*|-\<gtr\>, thick> (noeud2) -- (noeud3) node[midway, right] projection <eqref|eq:PGD2>; <node>at (0.3,-0.4) <math|<cX>>;>>
-
-    <label|fig:pgd>
+    <image|pgd.pdf||||><label|fig:pgd>
   </big-figure|Illustration of the projected subgradient descent method.>
 
   <\theorem>
@@ -1242,9 +1238,7 @@
   In words conditional gradient descent makes a step in the steepest descent direction <with|font-shape|italic|given the constraint set <math|<cX>>>, see Figure <reference|fig:FW> for an illustration. From a computational perspective, a key property of this scheme is that it replaces the projection step of projected gradient descent by a linear optimization over <math|<cX>>, which in some cases can be a much simpler problem.
 
   <\big-figure>
-    <padded-center|<tikzpicture|[scale=3] <node*|tokens=1> (noeud1) at (0.1,-0.1) [label=below right:<math|x<rsub|t>>] ; <node*|tokens=1> (noeud2) at (-0.38,0.65) [label=above left:<math|y<rsub|t>>] ; <draw*|-\<gtr\>, thick> (noeud1) -- (-0.05, 0.4) node[midway, right] <math|-\<nabla\>*f<around|(|x<rsub|t>|)>>; <node*|tokens=1> (noeud3) at (-0.065,0.15) [label=below left:<math|x<rsub|t+1>>] ; <draw*|thick, dashed> (noeud1) -- (noeud2) ; <node>at (0.3,-0.55) <math|<cX>>; <node>(S) [very thick, regular polygon, regular polygon sides=6, draw, inner sep=40] at (0,0) ;>>
-
-    <label|fig:FW>
+    <image|FW.pdf||||><label|fig:FW>
   </big-figure|Illustration of conditional gradient descent.>
 
   We now turn to the analysis of this method. A major advantage of conditional gradient descent over projected gradient descent is that the former can adapt to smoothness in an arbitrary norm. Precisely let <math|f> be <math|\<beta\>>-smooth in some norm <math|<around|\<\|\|\>|\<cdummy\>|\<\|\|\>>>, that is <math|<around|\<\|\|\>|\<nabla\>*f<around|(|x|)>-\<nabla\>*f<around|(|y|)>|\<\|\|\>><rsub|\<ast\>>\<leq\>\<beta\>*<around|\<\|\|\>|x-y|\<\|\|\>>> where the dual norm <math|<around|\<\|\|\>|\<cdummy\>|\<\|\|\>><rsub|\<ast\>>> is defined as <math|<around|\<\|\|\>|g|\<\|\|\>><rsub|\<ast\>>=sup<rsub|x\<in\>\<bbb-R\><rsup|n>:<around|\<\|\|\>|x|\<\|\|\>>\<leq\>1> g<rsup|\<top\>>*x>. The following result is extracted from <cite|Jag13> (see also <cite|DH78>).
@@ -1634,21 +1628,7 @@
   <subsection|Warm-up: a geometric alternative to gradient descent><label|sec:warmup>
 
   <\big-figure>
-    <\padded-center>
-      <\tikzpicture>
-        [scale=0.7, every node/.style=transform shape]
-
-        <draw>(0,0) ellipse (2 and 2); <draw*|dashed> (4,0) ellipse (4 and 4); <draw>(4,0) ellipse (3.85 and 3.85); <draw*|\|-\|> (4,0) -- (4,4) node[pos=0.5, right] <math|<around|\||g|\|>>; <draw*|\|-\|> (4,0) -- (7.85,0) node[pos=0.5, above] <math|<sqrt|1-\<epsilon\>><around|\||g|\|>>;
-
-        <scope| <clip>(0,0) ellipse (2 and 2); <fill*|lightgray> (4,0) ellipse (3.85 and 3.85);>
-
-        <draw>(0,0) node[cross=5pt] ;
-
-        <draw*|\|-\|> (0,0) -- (-2,0) node[pos=0.4, above] <math|1>; <draw*|\|-\|> (0.64719,0) -- (2.53958,0) node[pos=0.35, above] <math|<sqrt|1-\<epsilon\>>>; <draw*|thick> (0.64719,0) ellipse (1.8924 and 1.8924);
-      </tikzpicture>
-    </padded-center>
-
-    <label|fig:one_ball>
+    <image|one_ball.pdf||||><label|fig:one_ball>
   </big-figure|One ball shrinks.>
 
   We start with some notation. Let <math|<mB><around|(|x,r<rsup|2>|)>\<assign\><around|{|y\<in\><R><rsup|n>:<around|\<\|\|\>|y-x|\<\|\|\>><rsup|2>\<leq\>r<rsup|2>|}>> (note that the second argument is the radius squared), and
@@ -1686,23 +1666,7 @@
   <subsection|Acceleration><label|sec:accafterwarmup>
 
   <\big-figure>
-    <\padded-center>
-      <\tikzpicture>
-        [scale=0.7, every node/.style=transform shape]
-
-        <draw*|dashed> (0,0) ellipse (2 and 2); <draw>(0,0) ellipse (1.68 and 1.68); <draw*|dashed> (4,0) ellipse (4 and 4); <draw>(4,0) ellipse (3.85 and 3.85); <draw*|\|-\|> (4,0) -- (7.85,0) node[pos=0.5, above] <math|<sqrt|1-\<epsilon\>><around|\||g|\|>>;
-
-        <scope| <clip>(0,0) ellipse (1.68 and 1.68); <fill*|lightgray> (4,0) ellipse (3.85 and 3.85);>
-
-        <draw>(0,0) node[cross=4pt] ;
-
-        <draw*|\|-\|> (0,-3) -- (-1.68,-3) node[pos=0.5, above] <math|<sqrt|1-\<epsilon\><around|\||g|\|><rsup|2>>>; <draw*|\|-\|> (0.5,0) -- (2.1044,0) node[pos=0.3, above] <with|font-size|0.71|mode|math|<sqrt|1-<sqrt|\<epsilon\>>>>;
-
-        <draw*|thick> (0.5,0) ellipse (1.6044 and 1.6044);
-      </tikzpicture>
-    </padded-center>
-
-    <label|fig:two_ball>
+    <image|two_ball.pdf||||><label|fig:two_ball>
   </big-figure|Two balls shrink.>
 
   In the argument from the previous section we missed the following opportunity: observe that the ball <math|A=<mB><around|(|x,R<rsup|2>|)>> was obtained by intersections of previous balls of the form given by <eqref|eq:ball2>, and thus the new value <math|f<around|(|x|)>> could be used to reduce the radius of those previous balls too (an important caveat is that the value <math|f<around|(|x|)>> should be smaller than the values used to build those previous balls). Potentially this could show that the optimum is in fact contained in the ball <math|<mB><around*|(|x,R<rsup|2>-<frac|1|\<kappa\>>*<around|\<\|\|\>|\<nabla\>*f<around|(|x|)>|\<\|\|\>><rsup|2>|)>>. By taking the intersection with the ball <math|<mB><around*|(|x<rsup|++>,<frac|<around|\<\|\|\>|\<nabla\>*f<around|(|x|)>|\<\|\|\>><rsup|2>|\<alpha\><rsup|2>>*<around*|(|1-<frac|1|\<kappa\>>|)>|)>> this would allow to obtain a new ball with radius shrunk by a factor <math|1-<frac|1|<sqrt|\<kappa\>>>> (instead of <math|1-<frac|1|\<kappa\>>>): indeed for any <math|g\<in\><R><rsup|n>>, <math|\<epsilon\>\<in\><around|(|0,1|)>>, there exists <math|x\<in\><R><rsup|n>> such that
@@ -1786,9 +1750,7 @@
   </eqnarray*>
 
   <\big-figure>
-    <padded-center|<tikzpicture|[scale=1] <node*|tokens=1> (noeud1) at (0.5,1) [label=below right:<math|x<rsub|s>>] ; <node*|tokens=1> (noeud2) at (1.5,-1) [label=below right:<math|y<rsub|s>>] ; <node*|tokens=1> (noeud3) at (2.5,2) [label=below right:<math|y<rsub|s+1>>] ; <node*|tokens=1> (noeud4) at (2.8,3) [label=above left:<math|x<rsub|s+1>>] ; <draw*|-\<gtr\>, thick> (noeud1) -- (noeud3) node[midway, left] <math|-<frac|1|\<beta\>>*\<nabla\>*f<around|(|x<rsub|s>|)>>; <draw*|thick, dashed> (noeud2) -- (noeud4) ; <node*|tokens=1> (noeud5) at (4.5,3.3) [label=below right:<math|y<rsub|s+2>>] ; <node*|tokens=1> (noeud6) at (5.3,3.8) [label=right:<math|x<rsub|s+2>>] ; <draw*|-\<gtr\>, thick> (noeud4) -- (noeud5) ; <draw*|thick, dashed> (noeud3) -- (noeud6) ;>>
-
-    <label|fig:nesterovacc>
+    <image|nesterovacc.pdf||||><label|fig:nesterovacc>
   </big-figure|Illustration of Nesterov's accelerated gradient descent.>
 
   <\theorem>
@@ -2039,7 +2001,7 @@
 
   See Figure <reference|fig:MD> for an illustration of this procedure.
 
-  <big-figure|<tikzpicture|[scale=3.5] <clip>(-2.4,-0.7) rectangle (1,1); <draw*|rotate=30, very thick> (0,-0.5) ellipse (0.7 and 1); <draw*|very thick> (-2,0) ellipse (1 and 0.5); <node>(S) [very thick, regular polygon, regular polygon sides=6, draw, inner sep=20] at (0,0) ; <node>at (0.3,-0.6) <math|<cD>>; <node>at (-1.9,-0.4) <math|<R><rsup|n>>; <node>at (0.1, -0.2) <math|<cX>>; <node*|tokens=1> (noeudat) at (-0.1,0.15) [label=right:<math|x<rsub|t>>] ; <node*|tokens=1> (noeudat1) at (-0.15,-0.1) [label=right:<math|x<rsub|t+1>>] ; <node*|tokens=1> (noeudwt1) at (-0.4,-0.45) [label=below right:<math|y<rsub|t+1>>] ; <draw*|-\<gtr\>, thick> (noeudwt1) .. controls (-0.3, -0.45) and (-0.15, -0.2) .. (noeudat1) node[midway, below right] projection <eqref|eq:MD2>; <node*|tokens=1> (noeudmat) at (-1.62,0.15) [label=right:<math|\<nabla\>*\<Phi\><around|(|x<rsub|t>|)>>] ; <node*|tokens=1> (noeudmwt1) at (-1.42,-0.1) [label=right:<math|\<nabla\>*\<Phi\><around|(|y<rsub|t+1>|)>>] ; <draw*|-\<gtr\>, thick> (noeudmat) -- (noeudmwt1) node[midway, left] <tabular*|<tformat|<cwith|1|-1|1|1|cell-halign|c>|<cwith|1|-1|1|1|cell-lborder|0ln>|<cwith|1|-1|1|1|cell-rborder|0ln>|<cwith|1|-1|1|-1|cell-valign|c>|<table|<row|<cell|>>|<row|<cell|gradient step>>|<row|<cell|<eqref|eq:MD1>>>>>>; <draw*|-\<gtr\>, semithick> (noeudat) .. controls (-0.6,0.45) and (-1.12, 0.45) .. (noeudmat) node[midway, above] <math|\<nabla\>*\<Phi\>>; <draw*|-\<gtr\>, semithick> (noeudmwt1) .. controls (-1.22,-0.5) and (-0.44, -0.46) .. (noeudwt1) node[midway, below] <math|<around|(|\<nabla\>*\<Phi\>|)><rsup|-1>>;><label|fig:MD>|Illustration of mirror descent.<label|fig:MD>>
+  <big-figure|<label|fig:MD><image|MD.pdf||||>|Illustration of mirror descent.<label|fig:MD>>
 
   <\theorem>
     <label|th:MD>Let <math|\<Phi\>> be a mirror map <math|\<rho\>>-strongly convex on <math|\<cal-X\>\<cap\>\<cal-D\>> w.r.t. <math|<around|\<\|\|\>|\<cdummy\>|\<\|\|\>>>. Let <math|R<rsup|2>=sup<rsub|x\<in\>\<cal-X\>\<cap\>\<cal-D\>> \<Phi\><around|(|x|)>-\<Phi\><around|(|x<rsub|1>|)>>, and <math|f> be convex and <math|L>-Lipschitz w.r.t. <math|<around|\<\|\|\>|\<cdummy\>|\<\|\|\>>>. Then mirror descent with <math|\<eta\>=<frac|R|L>*<sqrt|<frac|2*\<rho\>|t>>> satisfies
@@ -2207,7 +2169,7 @@
 
   In words the algorithm first makes a step of mirror descent to go from <math|x<rsub|t>> to <math|y<rsub|t+1>>, and then it makes a similar step to obtain <math|x<rsub|t+1>>, starting again from <math|x<rsub|t>> but this time using the gradient of <math|f> evaluated at <math|y<rsub|t+1>> (instead of <math|x<rsub|t>>), see Figure <reference|fig:mp> for an illustration. The following result justifies the procedure.
 
-  <big-figure|<tikzpicture|[scale=4] <clip>(-2.4,-0.7) rectangle (0.5,1); <draw*|rotate=30, very thick> (0,-0.5) ellipse (0.73 and 1); <draw*|very thick> (-2,0) ellipse (1 and 0.5); <node>(S) [very thick, regular polygon, regular polygon sides=6, draw, inner sep=22] at (0,0) ; <node>at (0.3,-0.6) <math|<cD>>; <node>at (-2.2,-0.4) <math|<R><rsup|n>>; <node>at (0.12, -0.22) <math|<cX>>; <node*|tokens=1> (noeudat) at (-0.1,0.15) [label=right:<math|x<rsub|t>>] ; <node*|tokens=1> (noeudat1) at (-0.15,-0.13) [label=right:<math|y<rsub|t+1>>] ; <node*|tokens=1> (noeudwt1) at (-0.4,-0.45) [label=below right:<math|y<rsub|t+1><rprime|'>>] ; <draw*|-\<gtr\>, thick> (noeudwt1) .. controls (-0.3, -0.45) and (-0.15, -0.2) .. (noeudat1) node[midway, below right] projection; <node*|tokens=1> (noeudat3) at (-0.2,0) [label=right:<math|x<rsub|t+1>>] ; <node*|tokens=1> (noeudwt3) at (-0.3,-0.2) [label=left:<math|x<rsub|t+1><rprime|'>>] ; <draw*|-\<gtr\>, thick> (noeudwt3) .. controls (-0.22, -0.12) and (-0.22, -0.1) .. (noeudat3) ; <node*|tokens=1> (noeudmat) at (-1.7,0.3) [label=right:<math|\<nabla\>*\<Phi\><around|(|x<rsub|t>|)>>] ; <node*|tokens=1> (noeudmwt1) at (-2,-0.2) [label=below right:<math|\<nabla\>*\<Phi\><around|(|y<rsub|t+1><rprime|'>|)>>] ; <node*|tokens=1> (noeudmwt2) at (-1.6,-0.1) [label=right:<math|\<nabla\>*\<Phi\><around|(|x<rsub|t+1><rprime|'>|)>>] ; <draw*|-\<gtr\>, thick> (noeudmat) -- (noeudmwt2) node[midway, right] <math|-\<eta\>*\<nabla\>*f<around|(|y<rsub|t+1>|)>>; <draw*|-\<gtr\>, thick, dashed> (noeudmat) -- (noeudmwt1) node[midway, left] <math|-\<eta\>*\<nabla\>*f<around|(|x<rsub|t>|)>>; <draw*|-\<gtr\>, semithick> (-0.4,0.5) .. controls (-0.7,0.6) and (-1, 0.6) .. (-1.3,0.5) node[midway, above] <math|\<nabla\>*\<Phi\>>; <draw*|-\<gtr\>, semithick> (-1.45,-0.5) .. controls (-1.15,-0.6) and (-0.85, -0.6) .. (-0.55,-0.5) node[midway, below] <math|<around|(|\<nabla\>*\<Phi\>|)><rsup|-1>>;><label|fig:mp>|Illustration of mirror prox.>
+  <big-figure|<image|mp.pdf||||><label|fig:mp>|Illustration of mirror prox.>
 
   <\theorem>
     Let <math|\<Phi\>> be a mirror map <math|\<rho\>>-strongly convex on <math|\<cal-X\>\<cap\>\<cal-D\>> w.r.t. <math|<around|\<\|\|\>|\<cdummy\>|\<\|\|\>>>. Let <math|R<rsup|2>=sup<rsub|x\<in\>\<cal-X\>\<cap\>\<cal-D\>> \<Phi\><around|(|x|)>-\<Phi\><around|(|x<rsub|1>|)>>, and <math|f> be convex and <math|\<beta\>>-smooth w.r.t. <math|<around|\<\|\|\>|\<cdummy\>|\<\|\|\>>>. Then mirror prox with <math|\<eta\>=<frac|\<rho\>|\<beta\>>> satisfies
@@ -3649,380 +3611,379 @@
 
 <\references>
   <\collection>
-    <associate|auto-1|<tuple|?|7|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|auto-10|<tuple|2|15|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|auto-11|<tuple|2.1|15|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|auto-12|<tuple|2.2|16|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|auto-13|<tuple|2.3|18|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|auto-14|<tuple|2.3.1|19|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|auto-15|<tuple|2.3.2|19|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|auto-16|<tuple|2.3.3|19|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|auto-17|<tuple|2.3.4|20|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|auto-18|<tuple|2.4|23|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|auto-19|<tuple|3|25|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|auto-2|<tuple|1|9|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|auto-20|<tuple|3.1|25|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|auto-21|<tuple|3.1|25|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|auto-22|<tuple|3.2|26|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|auto-23|<tuple|3.2|27|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|auto-24|<tuple|3.6|29|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|auto-25|<tuple|3.3|30|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|auto-26|<tuple|3.3|30|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|auto-27|<tuple|3.4|31|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|auto-28|<tuple|3.4|32|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|auto-29|<tuple|3.4.1|33|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|auto-3|<tuple|1.1|9|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|auto-30|<tuple|3.4.2|33|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|auto-31|<tuple|3.5|34|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|auto-32|<tuple|3.6|37|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|auto-33|<tuple|3.6.1|38|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|auto-34|<tuple|3.4|38|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|auto-35|<tuple|3.6.2|38|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|auto-36|<tuple|3.5|38|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|auto-37|<tuple|3.6.3|39|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|auto-38|<tuple|3.7|40|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|auto-39|<tuple|3.7.1|40|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|auto-4|<tuple|1.2|10|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|auto-40|<tuple|3.6|40|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|auto-41|<tuple|3.7.2|42|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|auto-42|<tuple|4|45|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|auto-43|<tuple|4.1|46|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|auto-44|<tuple|4.2|47|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|auto-45|<tuple|4.1|47|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|auto-46|<tuple|4.3|48|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|auto-47|<tuple|4.4|49|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|auto-48|<tuple|4.5|50|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|auto-49|<tuple|4.2|50|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|auto-5|<tuple|1.3|11|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|auto-50|<tuple|4.6|51|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|auto-51|<tuple|5|53|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|auto-52|<tuple|5.1|53|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|auto-53|<tuple|5.1|53|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|auto-54|<tuple|5.2|54|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|auto-55|<tuple|5.2|54|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|auto-56|<tuple|5.2|54|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|auto-57|<tuple|5.2.1|55|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|auto-58|<tuple|5.2.2|55|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|auto-59|<tuple|5.2.3|56|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|auto-6|<tuple|1.4|12|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|auto-60|<tuple|5.2.4|56|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|auto-61|<tuple|5.2.4.1|57|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|auto-62|<tuple|5.2.4.2|57|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|auto-63|<tuple|5.2.4.3|57|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|auto-64|<tuple|5.3|58|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|auto-65|<tuple|5.3.1|58|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|auto-66|<tuple|5.3.2|59|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|auto-67|<tuple|5.3.3|60|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|auto-68|<tuple|5.3.4|61|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|auto-69|<tuple|5.3.5|62|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|auto-7|<tuple|1.5|13|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|auto-70|<tuple|5.3.6|63|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|auto-71|<tuple|6|65|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|auto-72|<tuple|6.1|65|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|auto-73|<tuple|6.2|66|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|auto-74|<tuple|6.3|68|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|auto-75|<tuple|6.4|70|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|auto-76|<tuple|6.4.1|70|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|auto-77|<tuple|6.4.2|71|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|auto-78|<tuple|6.5|72|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|auto-79|<tuple|6.6|73|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|auto-8|<tuple|1.6|13|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|auto-80|<tuple|6.7|75|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|auto-81|<tuple|6.4|77|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|auto-82|<tuple|6.4|79|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|auto-9|<tuple|1.1|14|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|beyond|<tuple|5|53|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-AB14|<tuple|1|79|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-ABL14|<tuple|2|79|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-ABM11|<tuple|3|79|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-AO14|<tuple|5|79|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-Ans98|<tuple|4|79|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-Asp08|<tuple|6|79|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-BC12|<tuple|9|79|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-BE14|<tuple|10|79|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-BEL15|<tuple|11|79|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-BJMO12|<tuple|13|79|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-BLS15|<tuple|14|79|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-BM13|<tuple|15|79|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-BN01|<tuple|16|79|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-BPCPE11|<tuple|17|79|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-BT03|<tuple|18|79|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-BT09|<tuple|19|79|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-BV04|<tuple|21|79|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-Bac13|<tuple|7|79|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-Bar14|<tuple|8|79|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-BerVem04|<tuple|12|79|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-Bub11|<tuple|20|79|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-CHW12|<tuple|23|79|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-CL06|<tuple|24|79|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-CP11|<tuple|26|79|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-CR09|<tuple|27|79|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-CSV09|<tuple|28|79|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-Cau47|<tuple|22|79|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-Cov92|<tuple|25|79|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-DBLJ14|<tuple|29|79|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-DGBSX12|<tuple|30|79|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-DH78|<tuple|31|79|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-DSSST10|<tuple|32|80|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-FT07|<tuple|33|80|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-FW56|<tuple|34|80|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-GK95|<tuple|35|80|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-GW95|<tuple|37|80|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-Gru60|<tuple|36|80|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-HTF01|<tuple|39|80|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-Haz11|<tuple|38|80|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-JN11a|<tuple|41|80|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-JN11b|<tuple|42|80|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-JNS13|<tuple|43|80|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-JZ13|<tuple|45|80|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-Jag13|<tuple|40|80|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-Jon92|<tuple|44|80|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-Kar84|<tuple|46|80|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-LJSB12|<tuple|48|80|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-LRSB12|<tuple|50|80|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-LS13|<tuple|51|80|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-LSW15|<tuple|52|80|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-Lev65|<tuple|47|80|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-Lov98|<tuple|49|80|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-Lug10|<tuple|53|80|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-MP89|<tuple|54|80|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-NN94|<tuple|66|81|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-NW06|<tuple|67|81|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-NY83|<tuple|68|81|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-Nem04|<tuple|55|80|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-Nem04b|<tuple|56|80|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-Nem82|<tuple|57|80|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-Nem95|<tuple|58|80|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-Nes04|<tuple|59|80|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-Nes04b|<tuple|60|80|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-Nes07|<tuple|61|80|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-Nes12|<tuple|62|80|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-Nes83|<tuple|63|80|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-Nes97|<tuple|64|80|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-New65|<tuple|65|81|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-PB13|<tuple|69|81|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-RM51|<tuple|72|81|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-RT12|<tuple|74|81|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-Rak09|<tuple|70|81|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-Ren01|<tuple|71|81|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-Roc70|<tuple|73|81|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-Rud99|<tuple|75|81|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-SBC14|<tuple|76|81|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-SLRB11|<tuple|77|81|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-SS02|<tuple|78|81|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-SSS14|<tuple|79|81|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-SSZ13|<tuple|80|81|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-SSZ13b|<tuple|81|81|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-Tib96|<tuple|82|81|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-Tse08|<tuple|83|81|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-Tsy03|<tuple|84|81|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-Vai89|<tuple|85|81|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-Vai96|<tuple|86|81|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-WNF09|<tuple|87|81|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-Xia10|<tuple|88|81|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|bib-ZX14|<tuple|89|81|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|dimfree|<tuple|3|25|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|eq:1|<tuple|3.30|42|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|eq:2|<tuple|3.31|42|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|eq:3|<tuple|3.34|43|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|eq:5|<tuple|3.37|43|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|eq:AGD0|<tuple|3.20|40|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|eq:AGD1|<tuple|3.21|40|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|eq:AGD2|<tuple|3.22|40|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|eq:AGD3|<tuple|3.24|41|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|eq:AGD4|<tuple|3.25|41|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|eq:AGD5|<tuple|3.27|41|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|eq:CG1|<tuple|2.19|23|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|eq:CG2|<tuple|2.20|23|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|eq:CG3|<tuple|2.22|23|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|eq:CG3prime|<tuple|2.21|23|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|eq:CG4|<tuple|2.23|23|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|eq:CG5|<tuple|2.24|24|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|eq:CG6|<tuple|2.25|24|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|eq:Cau47|<tuple|3.1|25|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|eq:DA0|<tuple|4.8|49|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|eq:DA1|<tuple|4.9|50|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|eq:DA2|<tuple|4.10|50|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|eq:FW1|<tuple|3.8|30|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|eq:FW2|<tuple|3.9|30|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|eq:MD1|<tuple|4.2|47|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|eq:MD2|<tuple|4.3|47|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|eq:MD3|<tuple|4.5|48|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|eq:MDproxview|<tuple|4.7|48|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|eq:PGD1|<tuple|3.2|25|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|eq:PGD2|<tuple|3.3|25|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|eq:SM|<tuple|2.14|20|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|eq:SVRG0|<tuple|6.1|69|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|eq:SVRG1|<tuple|6.2|69|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|eq:SVRG2|<tuple|6.6|69|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|eq:V21|<tuple|2.17|22|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|eq:V22|<tuple|2.18|22|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|eq:analysis1|<tuple|2.12|19|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|eq:analysis2|<tuple|2.13|20|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|eq:ass1|<tuple|3.16|34|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|eq:ball2|<tuple|3.17|38|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|eq:centerofgravity1|<tuple|2.2|16|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|eq:chap3eq1|<tuple|3.7|29|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|eq:coercive1|<tuple|3.6|28|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|eq:defaltsmooth|<tuple|3.4|27|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|eq:defstrongconv|<tuple|3.14|32|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|eq:dependsonL|<tuple|6.11|74|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|eq:ellipsoidlemma1|<tuple|2.3|16|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|eq:ellipsoidlemma2|<tuple|2.4|16|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|eq:ellipsoidlemma3|<tuple|2.5|16|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|eq:ellipsoidlemma4|<tuple|2.6|16|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|eq:ellipsoidlemma5|<tuple|2.7|17|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|eq:ellipsoidlemma6|<tuple|2.9|17|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|eq:gradvol|<tuple|2.10|19|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|eq:hessianvol|<tuple|2.11|19|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|eq:improvedstrongsmooth|<tuple|3.15|33|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|eq:key|<tuple|5.11|62|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|eq:keysp|<tuple|5.4|55|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|eq:linearclassif|<tuple|5.5|57|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|eq:maxcut1|<tuple|6.9|73|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|eq:maxcut2|<tuple|6.10|73|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|eq:nu|<tuple|5.10|61|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|eq:onestepofgd|<tuple|3.5|27|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|eq:oraclematrixgame|<tuple|6.7|73|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|eq:oraclematrixgame2|<tuple|6.8|73|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|eq:pourplustard1|<tuple|4.14|51|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|eq:proxoperator|<tuple|5.2|53|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|eq:quad|<tuple|6.12|75|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|eq:sprepresentation|<tuple|5.3|54|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|eq:structuredsparsity|<tuple|3.10|31|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|eq:structuredsparsity2|<tuple|3.12|32|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|eq:structuredsparsity3|<tuple|3.13|32|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|eq:supphyp|<tuple|1.2|11|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|eq:thV11|<tuple|2.15|21|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|eq:thV12|<tuple|2.16|21|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|eq:trucipm1|<tuple|5.7|61|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|eq:trucipm11|<tuple|5.8|61|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|eq:trucipm12|<tuple|5.18|62|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|eq:trucipm2|<tuple|5.9|61|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|eq:trucipm3|<tuple|5.6|61|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|eq:trucipm4|<tuple|5.15|62|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|eq:useful1|<tuple|4.1|46|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|eq:veryfirst|<tuple|1.1|9|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|eq:vfMD|<tuple|4.16|51|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|eq:vfMP|<tuple|4.17|52|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|fig:FW|<tuple|3.3|30|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|fig:MD|<tuple|4.1|47|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|fig:mp|<tuple|4.2|50|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|fig:nesterovacc|<tuple|3.6|40|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|fig:one_ball|<tuple|3.4|38|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|fig:pgd|<tuple|3.2|26|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|fig:pythagore|<tuple|3.1|25|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|fig:two_ball|<tuple|3.5|38|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|finitedim|<tuple|2|15|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|footnote-1.1|<tuple|1.1|14|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|footnote-2.1|<tuple|2.1|15|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|footnote-3.1|<tuple|3.1|25|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|footnote-3.2|<tuple|3.2|25|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|footnote-3.3|<tuple|3.3|26|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|footnote-3.4|<tuple|3.4|28|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|footnote-4.1|<tuple|4.1|46|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|footnote-4.2|<tuple|4.2|50|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|footnote-5.1|<tuple|5.1|53|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|footnote-5.2|<tuple|5.2|55|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|footnote-6.1|<tuple|6.1|65|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|footnote-6.2|<tuple|6.2|66|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|footnote-6.3|<tuple|6.3|70|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|footnote-6.4|<tuple|6.4|76|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|footnr-1.1|<tuple|1.1|14|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|footnr-2.1|<tuple|2.1|15|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|footnr-3.1|<tuple|3.1|25|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|footnr-3.2|<tuple|3.2|25|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|footnr-3.3|<tuple|3.3|26|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|footnr-3.4|<tuple|3.4|28|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|footnr-4.1|<tuple|4.1|46|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|footnr-4.2|<tuple|4.2|50|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|footnr-5.1|<tuple|5.1|53|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|footnr-5.2|<tuple|5.2|55|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|footnr-6.1|<tuple|6.1|65|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|footnr-6.2|<tuple|6.2|66|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|footnr-6.3|<tuple|6.3|70|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|footnr-6.4|<tuple|6.4|76|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|intro|<tuple|1|9|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|lem:2|<tuple|3.3|28|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|lem:BerVem04|<tuple|6.4|76|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|lem:GW|<tuple|6.3|74|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|lem:Gru60|<tuple|2.1|16|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|lem:SVRG|<tuple|6.1|68|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|lem:V1|<tuple|2.3|20|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|lem:V2|<tuple|2.4|22|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|lem:coercive2|<tuple|3.5|34|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|lem:geom|<tuple|3.6|39|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|lem:geomellipsoid|<tuple|2.2|16|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|lem:sand|<tuple|3.2|27|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|lem:smoothconst|<tuple|3.4|29|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|lem:tittrucnes|<tuple|6.2|72|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|lem:todonow|<tuple|3.1|25|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|lem:todonow2|<tuple|4.1|47|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|mirror|<tuple|4|45|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|prop:existencesubgradients|<tuple|1.1|10|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|prop:firstorder|<tuple|1.3|12|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|rand|<tuple|6|65|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|sec:AGD|<tuple|3.7|40|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|sec:CG|<tuple|2.4|23|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|sec:FW|<tuple|3.3|30|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|sec:GeoD|<tuple|3.6|37|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|sec:GeoDmethod|<tuple|3.6.3|39|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|sec:IPM|<tuple|5.3|58|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|sec:MD|<tuple|4.2|47|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|sec:accafterwarmup|<tuple|3.6.2|38|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|sec:analysis|<tuple|2.3.3|19|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|sec:barriermethod|<tuple|5.3.1|58|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|sec:blackbox|<tuple|1.4|12|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|sec:chap3LB|<tuple|3.5|34|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|sec:constraintsvolumetric|<tuple|2.3.4|20|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|sec:convexrelaxation|<tuple|6.6|73|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|sec:ellipsoid|<tuple|2.2|16|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|sec:gdsmooth|<tuple|3.2|27|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|sec:gravity|<tuple|2.1|15|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|sec:mdsetups|<tuple|4.3|48|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|sec:mlapps|<tuple|1.1|9|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|sec:mm|<tuple|4.1|46|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|sec:psgd|<tuple|3.1|25|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|sec:rwmethod|<tuple|6.7|75|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|sec:simplenonsmooth|<tuple|5.1|53|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|sec:smd|<tuple|6.1|65|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|sec:sp|<tuple|5.2.1|55|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|sec:spex|<tuple|5.2.4|56|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|sec:spex1|<tuple|5.2.4.1|57|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|sec:spex2|<tuple|5.2.4.2|57|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|sec:spex3|<tuple|5.2.4.3|57|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|sec:spmd|<tuple|5.2.2|55|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|sec:sprepresentation|<tuple|5.2|54|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|sec:structured|<tuple|1.5|13|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|sec:tradanalysisNM|<tuple|5.3.2|59|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|sec:vectorfield|<tuple|4.6|51|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|sec:warmup|<tuple|3.6.1|38|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|table|<tuple|1.1|14|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|th:GW|<tuple|6.9|74|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|th:LJSB12|<tuple|3.5|33|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|th:MD|<tuple|4.1|47|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|th:NM|<tuple|5.3|59|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|th:NMsc|<tuple|5.4|61|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|th:SMD|<tuple|6.1|66|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|th:SMDsmooth|<tuple|6.3|66|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|th:SVRG|<tuple|6.4|69|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|th:V0|<tuple|2.3|21|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|th:V1|<tuple|2.4|21|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|th:centerofgravity|<tuple|2.1|15|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|th:gdsmooth|<tuple|3.2|27|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|th:gdsmoothconstrained|<tuple|3.3|29|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|th:gdssc|<tuple|3.6|33|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|th:lb1|<tuple|3.8|35|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|th:lb2|<tuple|3.9|36|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|th:lb3|<tuple|3.10|36|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|th:linearratercd|<tuple|6.7|72|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|th:pgd|<tuple|3.1|26|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|th:rcdgamma|<tuple|6.6|71|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|th:sgdstrong|<tuple|6.2|66|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|th:spmd|<tuple|5.1|55|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|th:spmp|<tuple|5.2|56|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|th:sspmd|<tuple|6.8|72|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
-    <associate|thm:main|<tuple|3.11|39|../../../Library/Application Support/liiilabs/texts/scratch/no_name_212.tm>>
+    <associate|auto-1|<tuple|?|7>>
+    <associate|auto-10|<tuple|2|15>>
+    <associate|auto-11|<tuple|2.1|15>>
+    <associate|auto-12|<tuple|2.2|16>>
+    <associate|auto-13|<tuple|2.3|18>>
+    <associate|auto-14|<tuple|2.3.1|19>>
+    <associate|auto-15|<tuple|2.3.2|19>>
+    <associate|auto-16|<tuple|2.3.3|19>>
+    <associate|auto-17|<tuple|2.3.4|20>>
+    <associate|auto-18|<tuple|2.4|23>>
+    <associate|auto-19|<tuple|3|25>>
+    <associate|auto-2|<tuple|1|9>>
+    <associate|auto-20|<tuple|3.1|25>>
+    <associate|auto-21|<tuple|3.1|26>>
+    <associate|auto-22|<tuple|3.2|26>>
+    <associate|auto-23|<tuple|3.2|27>>
+    <associate|auto-24|<tuple|3.6|29>>
+    <associate|auto-25|<tuple|3.3|30>>
+    <associate|auto-26|<tuple|3.3|31>>
+    <associate|auto-27|<tuple|3.4|32>>
+    <associate|auto-28|<tuple|3.4|33>>
+    <associate|auto-29|<tuple|3.4.1|33>>
+    <associate|auto-3|<tuple|1.1|9>>
+    <associate|auto-30|<tuple|3.4.2|34>>
+    <associate|auto-31|<tuple|3.5|35>>
+    <associate|auto-32|<tuple|3.6|38>>
+    <associate|auto-33|<tuple|3.6.1|38>>
+    <associate|auto-34|<tuple|3.4|38>>
+    <associate|auto-35|<tuple|3.6.2|39>>
+    <associate|auto-36|<tuple|3.5|39>>
+    <associate|auto-37|<tuple|3.6.3|40>>
+    <associate|auto-38|<tuple|3.7|41>>
+    <associate|auto-39|<tuple|3.7.1|41>>
+    <associate|auto-4|<tuple|1.2|10>>
+    <associate|auto-40|<tuple|3.6|41>>
+    <associate|auto-41|<tuple|3.7.2|43>>
+    <associate|auto-42|<tuple|4|45>>
+    <associate|auto-43|<tuple|4.1|46>>
+    <associate|auto-44|<tuple|4.2|47>>
+    <associate|auto-45|<tuple|4.1|47>>
+    <associate|auto-46|<tuple|4.3|48>>
+    <associate|auto-47|<tuple|4.4|49>>
+    <associate|auto-48|<tuple|4.5|50>>
+    <associate|auto-49|<tuple|4.2|51>>
+    <associate|auto-5|<tuple|1.3|11>>
+    <associate|auto-50|<tuple|4.6|52>>
+    <associate|auto-51|<tuple|5|53>>
+    <associate|auto-52|<tuple|5.1|53>>
+    <associate|auto-53|<tuple|5.1|53>>
+    <associate|auto-54|<tuple|5.2|54>>
+    <associate|auto-55|<tuple|5.2|54>>
+    <associate|auto-56|<tuple|5.2|54>>
+    <associate|auto-57|<tuple|5.2.1|55>>
+    <associate|auto-58|<tuple|5.2.2|55>>
+    <associate|auto-59|<tuple|5.2.3|56>>
+    <associate|auto-6|<tuple|1.4|12>>
+    <associate|auto-60|<tuple|5.2.4|56>>
+    <associate|auto-61|<tuple|5.2.4.1|57>>
+    <associate|auto-62|<tuple|5.2.4.2|57>>
+    <associate|auto-63|<tuple|5.2.4.3|57>>
+    <associate|auto-64|<tuple|5.3|58>>
+    <associate|auto-65|<tuple|5.3.1|58>>
+    <associate|auto-66|<tuple|5.3.2|59>>
+    <associate|auto-67|<tuple|5.3.3|60>>
+    <associate|auto-68|<tuple|5.3.4|61>>
+    <associate|auto-69|<tuple|5.3.5|62>>
+    <associate|auto-7|<tuple|1.5|13>>
+    <associate|auto-70|<tuple|5.3.6|63>>
+    <associate|auto-71|<tuple|6|65>>
+    <associate|auto-72|<tuple|6.1|65>>
+    <associate|auto-73|<tuple|6.2|66>>
+    <associate|auto-74|<tuple|6.3|68>>
+    <associate|auto-75|<tuple|6.4|70>>
+    <associate|auto-76|<tuple|6.4.1|70>>
+    <associate|auto-77|<tuple|6.4.2|71>>
+    <associate|auto-78|<tuple|6.5|72>>
+    <associate|auto-79|<tuple|6.6|73>>
+    <associate|auto-8|<tuple|1.6|13>>
+    <associate|auto-80|<tuple|6.7|75>>
+    <associate|auto-81|<tuple|6.4|77>>
+    <associate|auto-82|<tuple|6.4|79>>
+    <associate|auto-9|<tuple|1.1|14>>
+    <associate|beyond|<tuple|5|53>>
+    <associate|bib-AB14|<tuple|1|79>>
+    <associate|bib-ABL14|<tuple|2|79>>
+    <associate|bib-ABM11|<tuple|3|79>>
+    <associate|bib-AO14|<tuple|5|79>>
+    <associate|bib-Ans98|<tuple|4|79>>
+    <associate|bib-Asp08|<tuple|6|79>>
+    <associate|bib-BC12|<tuple|9|79>>
+    <associate|bib-BE14|<tuple|10|79>>
+    <associate|bib-BEL15|<tuple|11|79>>
+    <associate|bib-BJMO12|<tuple|13|79>>
+    <associate|bib-BLS15|<tuple|14|79>>
+    <associate|bib-BM13|<tuple|15|79>>
+    <associate|bib-BN01|<tuple|16|79>>
+    <associate|bib-BPCPE11|<tuple|17|79>>
+    <associate|bib-BT03|<tuple|18|79>>
+    <associate|bib-BT09|<tuple|19|79>>
+    <associate|bib-BV04|<tuple|21|79>>
+    <associate|bib-Bac13|<tuple|7|79>>
+    <associate|bib-Bar14|<tuple|8|79>>
+    <associate|bib-BerVem04|<tuple|12|79>>
+    <associate|bib-Bub11|<tuple|20|79>>
+    <associate|bib-CHW12|<tuple|23|79>>
+    <associate|bib-CL06|<tuple|24|79>>
+    <associate|bib-CP11|<tuple|26|79>>
+    <associate|bib-CR09|<tuple|27|79>>
+    <associate|bib-CSV09|<tuple|28|79>>
+    <associate|bib-Cau47|<tuple|22|79>>
+    <associate|bib-Cov92|<tuple|25|79>>
+    <associate|bib-DBLJ14|<tuple|29|79>>
+    <associate|bib-DGBSX12|<tuple|30|79>>
+    <associate|bib-DH78|<tuple|31|79>>
+    <associate|bib-DSSST10|<tuple|32|80>>
+    <associate|bib-FT07|<tuple|33|80>>
+    <associate|bib-FW56|<tuple|34|80>>
+    <associate|bib-GK95|<tuple|35|80>>
+    <associate|bib-GW95|<tuple|37|80>>
+    <associate|bib-Gru60|<tuple|36|80>>
+    <associate|bib-HTF01|<tuple|39|80>>
+    <associate|bib-Haz11|<tuple|38|80>>
+    <associate|bib-JN11a|<tuple|41|80>>
+    <associate|bib-JN11b|<tuple|42|80>>
+    <associate|bib-JNS13|<tuple|43|80>>
+    <associate|bib-JZ13|<tuple|45|80>>
+    <associate|bib-Jag13|<tuple|40|80>>
+    <associate|bib-Jon92|<tuple|44|80>>
+    <associate|bib-Kar84|<tuple|46|80>>
+    <associate|bib-LJSB12|<tuple|48|80>>
+    <associate|bib-LRSB12|<tuple|50|80>>
+    <associate|bib-LS13|<tuple|51|80>>
+    <associate|bib-LSW15|<tuple|52|80>>
+    <associate|bib-Lev65|<tuple|47|80>>
+    <associate|bib-Lov98|<tuple|49|80>>
+    <associate|bib-Lug10|<tuple|53|80>>
+    <associate|bib-MP89|<tuple|54|80>>
+    <associate|bib-NN94|<tuple|66|81>>
+    <associate|bib-NW06|<tuple|67|81>>
+    <associate|bib-NY83|<tuple|68|81>>
+    <associate|bib-Nem04|<tuple|55|80>>
+    <associate|bib-Nem04b|<tuple|56|80>>
+    <associate|bib-Nem82|<tuple|57|80>>
+    <associate|bib-Nem95|<tuple|58|80>>
+    <associate|bib-Nes04|<tuple|59|80>>
+    <associate|bib-Nes04b|<tuple|60|80>>
+    <associate|bib-Nes07|<tuple|61|80>>
+    <associate|bib-Nes12|<tuple|62|80>>
+    <associate|bib-Nes83|<tuple|63|80>>
+    <associate|bib-Nes97|<tuple|64|80>>
+    <associate|bib-New65|<tuple|65|81>>
+    <associate|bib-PB13|<tuple|69|81>>
+    <associate|bib-RM51|<tuple|72|81>>
+    <associate|bib-RT12|<tuple|74|81>>
+    <associate|bib-Rak09|<tuple|70|81>>
+    <associate|bib-Ren01|<tuple|71|81>>
+    <associate|bib-Roc70|<tuple|73|81>>
+    <associate|bib-Rud99|<tuple|75|81>>
+    <associate|bib-SBC14|<tuple|76|81>>
+    <associate|bib-SLRB11|<tuple|77|81>>
+    <associate|bib-SS02|<tuple|78|81>>
+    <associate|bib-SSS14|<tuple|79|81>>
+    <associate|bib-SSZ13|<tuple|80|81>>
+    <associate|bib-SSZ13b|<tuple|81|81>>
+    <associate|bib-Tib96|<tuple|82|81>>
+    <associate|bib-Tse08|<tuple|83|81>>
+    <associate|bib-Tsy03|<tuple|84|81>>
+    <associate|bib-Vai89|<tuple|85|81>>
+    <associate|bib-Vai96|<tuple|86|81>>
+    <associate|bib-WNF09|<tuple|87|81>>
+    <associate|bib-Xia10|<tuple|88|81>>
+    <associate|bib-ZX14|<tuple|89|81>>
+    <associate|dimfree|<tuple|3|25>>
+    <associate|eq:1|<tuple|3.30|43>>
+    <associate|eq:2|<tuple|3.31|43>>
+    <associate|eq:3|<tuple|3.34|44>>
+    <associate|eq:5|<tuple|3.37|44>>
+    <associate|eq:AGD0|<tuple|3.20|41>>
+    <associate|eq:AGD1|<tuple|3.21|41>>
+    <associate|eq:AGD2|<tuple|3.22|41>>
+    <associate|eq:AGD3|<tuple|3.24|42>>
+    <associate|eq:AGD4|<tuple|3.25|42>>
+    <associate|eq:AGD5|<tuple|3.27|42>>
+    <associate|eq:CG1|<tuple|2.19|23>>
+    <associate|eq:CG2|<tuple|2.20|23>>
+    <associate|eq:CG3|<tuple|2.22|23>>
+    <associate|eq:CG3prime|<tuple|2.21|23>>
+    <associate|eq:CG4|<tuple|2.23|23>>
+    <associate|eq:CG5|<tuple|2.24|24>>
+    <associate|eq:CG6|<tuple|2.25|24>>
+    <associate|eq:Cau47|<tuple|3.1|25>>
+    <associate|eq:DA0|<tuple|4.8|49>>
+    <associate|eq:DA1|<tuple|4.9|50>>
+    <associate|eq:DA2|<tuple|4.10|50>>
+    <associate|eq:FW1|<tuple|3.8|30>>
+    <associate|eq:FW2|<tuple|3.9|30>>
+    <associate|eq:MD1|<tuple|4.2|47>>
+    <associate|eq:MD2|<tuple|4.3|47>>
+    <associate|eq:MD3|<tuple|4.5|48>>
+    <associate|eq:MDproxview|<tuple|4.7|48>>
+    <associate|eq:PGD1|<tuple|3.2|26>>
+    <associate|eq:PGD2|<tuple|3.3|26>>
+    <associate|eq:SM|<tuple|2.14|20>>
+    <associate|eq:SVRG0|<tuple|6.1|69>>
+    <associate|eq:SVRG1|<tuple|6.2|69>>
+    <associate|eq:SVRG2|<tuple|6.6|69>>
+    <associate|eq:V21|<tuple|2.17|22>>
+    <associate|eq:V22|<tuple|2.18|22>>
+    <associate|eq:analysis1|<tuple|2.12|19>>
+    <associate|eq:analysis2|<tuple|2.13|20>>
+    <associate|eq:ass1|<tuple|3.16|35>>
+    <associate|eq:ball2|<tuple|3.17|39>>
+    <associate|eq:centerofgravity1|<tuple|2.2|16>>
+    <associate|eq:chap3eq1|<tuple|3.7|29>>
+    <associate|eq:coercive1|<tuple|3.6|29>>
+    <associate|eq:defaltsmooth|<tuple|3.4|28>>
+    <associate|eq:defstrongconv|<tuple|3.14|33>>
+    <associate|eq:dependsonL|<tuple|6.11|74>>
+    <associate|eq:ellipsoidlemma1|<tuple|2.3|16>>
+    <associate|eq:ellipsoidlemma2|<tuple|2.4|16>>
+    <associate|eq:ellipsoidlemma3|<tuple|2.5|16>>
+    <associate|eq:ellipsoidlemma4|<tuple|2.6|16>>
+    <associate|eq:ellipsoidlemma5|<tuple|2.7|17>>
+    <associate|eq:ellipsoidlemma6|<tuple|2.9|17>>
+    <associate|eq:gradvol|<tuple|2.10|19>>
+    <associate|eq:hessianvol|<tuple|2.11|19>>
+    <associate|eq:improvedstrongsmooth|<tuple|3.15|34>>
+    <associate|eq:key|<tuple|5.11|62>>
+    <associate|eq:keysp|<tuple|5.4|55>>
+    <associate|eq:linearclassif|<tuple|5.5|57>>
+    <associate|eq:maxcut1|<tuple|6.9|73>>
+    <associate|eq:maxcut2|<tuple|6.10|73>>
+    <associate|eq:nu|<tuple|5.10|61>>
+    <associate|eq:onestepofgd|<tuple|3.5|28>>
+    <associate|eq:oraclematrixgame|<tuple|6.7|73>>
+    <associate|eq:oraclematrixgame2|<tuple|6.8|73>>
+    <associate|eq:pourplustard1|<tuple|4.14|51>>
+    <associate|eq:proxoperator|<tuple|5.2|53>>
+    <associate|eq:quad|<tuple|6.12|75>>
+    <associate|eq:sprepresentation|<tuple|5.3|54>>
+    <associate|eq:structuredsparsity|<tuple|3.10|32>>
+    <associate|eq:structuredsparsity2|<tuple|3.12|32>>
+    <associate|eq:structuredsparsity3|<tuple|3.13|33>>
+    <associate|eq:supphyp|<tuple|1.2|11>>
+    <associate|eq:thV11|<tuple|2.15|21>>
+    <associate|eq:thV12|<tuple|2.16|21>>
+    <associate|eq:trucipm1|<tuple|5.7|61>>
+    <associate|eq:trucipm11|<tuple|5.8|61>>
+    <associate|eq:trucipm12|<tuple|5.18|62>>
+    <associate|eq:trucipm2|<tuple|5.9|61>>
+    <associate|eq:trucipm3|<tuple|5.6|61>>
+    <associate|eq:trucipm4|<tuple|5.15|62>>
+    <associate|eq:useful1|<tuple|4.1|46>>
+    <associate|eq:veryfirst|<tuple|1.1|9>>
+    <associate|eq:vfMD|<tuple|4.16|52>>
+    <associate|eq:vfMP|<tuple|4.17|52>>
+    <associate|fig:FW|<tuple|3.3|31>>
+    <associate|fig:MD|<tuple|4.1|47>>
+    <associate|fig:mp|<tuple|4.2|51>>
+    <associate|fig:nesterovacc|<tuple|3.6|41>>
+    <associate|fig:one_ball|<tuple|3.4|38>>
+    <associate|fig:pgd|<tuple|3.2|26>>
+    <associate|fig:two_ball|<tuple|3.5|39>>
+    <associate|finitedim|<tuple|2|15>>
+    <associate|footnote-1.1|<tuple|1.1|14>>
+    <associate|footnote-2.1|<tuple|2.1|15>>
+    <associate|footnote-3.1|<tuple|3.1|25>>
+    <associate|footnote-3.2|<tuple|3.2|26>>
+    <associate|footnote-3.3|<tuple|3.3|27>>
+    <associate|footnote-3.4|<tuple|3.4|29>>
+    <associate|footnote-4.1|<tuple|4.1|46>>
+    <associate|footnote-4.2|<tuple|4.2|50>>
+    <associate|footnote-5.1|<tuple|5.1|53>>
+    <associate|footnote-5.2|<tuple|5.2|55>>
+    <associate|footnote-6.1|<tuple|6.1|65>>
+    <associate|footnote-6.2|<tuple|6.2|66>>
+    <associate|footnote-6.3|<tuple|6.3|70>>
+    <associate|footnote-6.4|<tuple|6.4|76>>
+    <associate|footnr-1.1|<tuple|1.1|14>>
+    <associate|footnr-2.1|<tuple|2.1|15>>
+    <associate|footnr-3.1|<tuple|3.1|25>>
+    <associate|footnr-3.2|<tuple|3.2|26>>
+    <associate|footnr-3.3|<tuple|3.3|27>>
+    <associate|footnr-3.4|<tuple|3.4|29>>
+    <associate|footnr-4.1|<tuple|4.1|46>>
+    <associate|footnr-4.2|<tuple|4.2|50>>
+    <associate|footnr-5.1|<tuple|5.1|53>>
+    <associate|footnr-5.2|<tuple|5.2|55>>
+    <associate|footnr-6.1|<tuple|6.1|65>>
+    <associate|footnr-6.2|<tuple|6.2|66>>
+    <associate|footnr-6.3|<tuple|6.3|70>>
+    <associate|footnr-6.4|<tuple|6.4|76>>
+    <associate|intro|<tuple|1|9>>
+    <associate|lem:2|<tuple|3.3|28>>
+    <associate|lem:BerVem04|<tuple|6.4|76>>
+    <associate|lem:GW|<tuple|6.3|74>>
+    <associate|lem:Gru60|<tuple|2.1|16>>
+    <associate|lem:SVRG|<tuple|6.1|68>>
+    <associate|lem:V1|<tuple|2.3|20>>
+    <associate|lem:V2|<tuple|2.4|22>>
+    <associate|lem:coercive2|<tuple|3.5|34>>
+    <associate|lem:geom|<tuple|3.6|40>>
+    <associate|lem:geomellipsoid|<tuple|2.2|16>>
+    <associate|lem:sand|<tuple|3.2|28>>
+    <associate|lem:smoothconst|<tuple|3.4|29>>
+    <associate|lem:tittrucnes|<tuple|6.2|72>>
+    <associate|lem:todonow|<tuple|3.1|25>>
+    <associate|lem:todonow2|<tuple|4.1|47>>
+    <associate|mirror|<tuple|4|45>>
+    <associate|prop:existencesubgradients|<tuple|1.1|10>>
+    <associate|prop:firstorder|<tuple|1.3|12>>
+    <associate|rand|<tuple|6|65>>
+    <associate|sec:AGD|<tuple|3.7|41>>
+    <associate|sec:CG|<tuple|2.4|23>>
+    <associate|sec:FW|<tuple|3.3|30>>
+    <associate|sec:GeoD|<tuple|3.6|38>>
+    <associate|sec:GeoDmethod|<tuple|3.6.3|40>>
+    <associate|sec:IPM|<tuple|5.3|58>>
+    <associate|sec:MD|<tuple|4.2|47>>
+    <associate|sec:accafterwarmup|<tuple|3.6.2|39>>
+    <associate|sec:analysis|<tuple|2.3.3|19>>
+    <associate|sec:barriermethod|<tuple|5.3.1|58>>
+    <associate|sec:blackbox|<tuple|1.4|12>>
+    <associate|sec:chap3LB|<tuple|3.5|35>>
+    <associate|sec:constraintsvolumetric|<tuple|2.3.4|20>>
+    <associate|sec:convexrelaxation|<tuple|6.6|73>>
+    <associate|sec:ellipsoid|<tuple|2.2|16>>
+    <associate|sec:gdsmooth|<tuple|3.2|27>>
+    <associate|sec:gravity|<tuple|2.1|15>>
+    <associate|sec:mdsetups|<tuple|4.3|48>>
+    <associate|sec:mlapps|<tuple|1.1|9>>
+    <associate|sec:mm|<tuple|4.1|46>>
+    <associate|sec:psgd|<tuple|3.1|26>>
+    <associate|sec:rwmethod|<tuple|6.7|75>>
+    <associate|sec:simplenonsmooth|<tuple|5.1|53>>
+    <associate|sec:smd|<tuple|6.1|65>>
+    <associate|sec:sp|<tuple|5.2.1|55>>
+    <associate|sec:spex|<tuple|5.2.4|56>>
+    <associate|sec:spex1|<tuple|5.2.4.1|57>>
+    <associate|sec:spex2|<tuple|5.2.4.2|57>>
+    <associate|sec:spex3|<tuple|5.2.4.3|57>>
+    <associate|sec:spmd|<tuple|5.2.2|55>>
+    <associate|sec:sprepresentation|<tuple|5.2|54>>
+    <associate|sec:structured|<tuple|1.5|13>>
+    <associate|sec:tradanalysisNM|<tuple|5.3.2|59>>
+    <associate|sec:vectorfield|<tuple|4.6|52>>
+    <associate|sec:warmup|<tuple|3.6.1|38>>
+    <associate|table|<tuple|1.1|14>>
+    <associate|th:GW|<tuple|6.9|74>>
+    <associate|th:LJSB12|<tuple|3.5|34>>
+    <associate|th:MD|<tuple|4.1|47>>
+    <associate|th:NM|<tuple|5.3|59>>
+    <associate|th:NMsc|<tuple|5.4|61>>
+    <associate|th:SMD|<tuple|6.1|66>>
+    <associate|th:SMDsmooth|<tuple|6.3|66>>
+    <associate|th:SVRG|<tuple|6.4|69>>
+    <associate|th:V0|<tuple|2.3|21>>
+    <associate|th:V1|<tuple|2.4|21>>
+    <associate|th:centerofgravity|<tuple|2.1|15>>
+    <associate|th:gdsmooth|<tuple|3.2|27>>
+    <associate|th:gdsmoothconstrained|<tuple|3.3|30>>
+    <associate|th:gdssc|<tuple|3.6|34>>
+    <associate|th:lb1|<tuple|3.8|35>>
+    <associate|th:lb2|<tuple|3.9|36>>
+    <associate|th:lb3|<tuple|3.10|37>>
+    <associate|th:linearratercd|<tuple|6.7|72>>
+    <associate|th:pgd|<tuple|3.1|26>>
+    <associate|th:rcdgamma|<tuple|6.6|71>>
+    <associate|th:sgdstrong|<tuple|6.2|66>>
+    <associate|th:spmd|<tuple|5.1|55>>
+    <associate|th:spmp|<tuple|5.2|56>>
+    <associate|th:sspmd|<tuple|6.8|72>>
+    <associate|thm:main|<tuple|3.11|40>>
   </collection>
 </references>
 
