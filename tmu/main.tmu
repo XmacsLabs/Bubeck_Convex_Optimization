@@ -1,4 +1,4 @@
-<TMU|<tuple|1.1.0|2025.0.12>>
+<TMU|<tuple|1.1.0|2025.0.14>>
 
 <style|<tuple|book|number-europe|preview-ref|smart-ref>>
 
@@ -3319,10 +3319,10 @@
     Let <math|V\<in\><R><rsup|n\<times\>n>> (with <math|i<rsup|t*h>> row <math|V<rsub|i><rsup|\<top\>>>) be such that <math|\<Sigma\>=V*V<rsup|\<top\>>>. Note that since <math|\<Sigma\><rsub|i,i>=1> one has <math|<around|\<\|\|\>|V<rsub|i>|\<\|\|\>><rsub|2>=1> (remark also that necessarily <math|<around|\||\<Sigma\><rsub|i,j>|\|>\<leq\>1>, which will be important in the proof of Theorem <reference|th:GW>). Let <math|\<epsilon\>\<sim\>\<cal-N\><around|(|0,<mI><rsub|n>|)>> be such that <math|\<xi\>=V*\<epsilon\>>. Then <math|\<zeta\><rsub|i>=<math-up|sign><around|(|V<rsub|i><rsup|\<top\>>*\<epsilon\>|)>>, and in particular
 
     <\eqnarray*>
-      <tformat|<table|<row|<cell|<E>*\<zeta\><rsub|i>*\<zeta\><rsub|j>>|<cell|=>|<cell|<paragraphsign><around|(|V<rsub|i><rsup|\<top\>>*\<epsilon\>\<geq\>0*<text|and>V<rsub|j><rsup|\<top\>>*\<epsilon\>\<geq\>0|)>+<paragraphsign>(V<rsub|i><rsup|\<top\>>*\<epsilon\>\<leq\>0*<text|and>V<rsub|j><rsup|\<top\>>*\<epsilon\>\<leq\>0>>|<row|<cell|>|<cell|>|<cell|-<paragraphsign><around|(|V<rsub|i><rsup|\<top\>>*\<epsilon\>\<geq\>0*<text|and>V<rsub|j><rsup|\<top\>>*\<epsilon\>\<less\>0|)>-<paragraphsign><around|(|V<rsub|i><rsup|\<top\>>*\<epsilon\>\<less\>0*<text|and>V<rsub|j><rsup|\<top\>>*\<epsilon\>\<geq\>0|)>>>|<row|<cell|>|<cell|=>|<cell|2<paragraphsign><around|(|V<rsub|i><rsup|\<top\>>*\<epsilon\>\<geq\>0*<text|and>V<rsub|j><rsup|\<top\>>*\<epsilon\>\<geq\>0|)>-2<paragraphsign><around|(|V<rsub|i><rsup|\<top\>>*\<epsilon\>\<geq\>0*<text|and>V<rsub|j><rsup|\<top\>>*\<epsilon\>\<less\>0|)>>>|<row|<cell|>|<cell|=>|<cell|<paragraphsign><around|(|V<rsub|j><rsup|\<top\>>*\<epsilon\>\<geq\>0\|V<rsub|i><rsup|\<top\>>*\<epsilon\>\<geq\>0|)>-<paragraphsign><around|(|V<rsub|j><rsup|\<top\>>*\<epsilon\>\<less\>0\|V<rsub|i><rsup|\<top\>>*\<epsilon\>\<geq\>0|)>>>|<row|<cell|>|<cell|=>|<cell|1-2<paragraphsign><around|(|V<rsub|j><rsup|\<top\>>*\<epsilon\>\<less\>0\|V<rsub|i><rsup|\<top\>>*\<epsilon\>\<geq\>0|)>.>>>>
+      <tformat|<table|<row|<cell|<E>*\<zeta\><rsub|i>*\<zeta\><rsub|j>>|<cell|=>|<cell|\<bbb-P\><around|(|V<rsub|i><rsup|\<top\>>*\<epsilon\>\<geq\>0*<text|and>V<rsub|j><rsup|\<top\>>*\<epsilon\>\<geq\>0|)>+\<bbb-P\>(V<rsub|i><rsup|\<top\>>*\<epsilon\>\<leq\>0*<text|and>V<rsub|j><rsup|\<top\>>*\<epsilon\>\<leq\>0>>|<row|<cell|>|<cell|>|<cell|-\<bbb-P\><around|(|V<rsub|i><rsup|\<top\>>*\<epsilon\>\<geq\>0*<text|and>V<rsub|j><rsup|\<top\>>*\<epsilon\>\<less\>0|)>-\<bbb-P\><around|(|V<rsub|i><rsup|\<top\>>*\<epsilon\>\<less\>0*<text|and>V<rsub|j><rsup|\<top\>>*\<epsilon\>\<geq\>0|)>>>|<row|<cell|>|<cell|=>|<cell|2\<bbb-P\><around|(|V<rsub|i><rsup|\<top\>>*\<epsilon\>\<geq\>0*<text|and>V<rsub|j><rsup|\<top\>>*\<epsilon\>\<geq\>0|)>-2\<bbb-P\><around|(|V<rsub|i><rsup|\<top\>>*\<epsilon\>\<geq\>0*<text|and>V<rsub|j><rsup|\<top\>>*\<epsilon\>\<less\>0|)>>>|<row|<cell|>|<cell|=>|<cell|\<bbb-P\><around|(|V<rsub|j><rsup|\<top\>>*\<epsilon\>\<geq\>0\|V<rsub|i><rsup|\<top\>>*\<epsilon\>\<geq\>0|)>-\<bbb-P\><around|(|V<rsub|j><rsup|\<top\>>*\<epsilon\>\<less\>0\|V<rsub|i><rsup|\<top\>>*\<epsilon\>\<geq\>0|)>>>|<row|<cell|>|<cell|=>|<cell|1-2\<bbb-P\><around|(|V<rsub|j><rsup|\<top\>>*\<epsilon\>\<less\>0\|V<rsub|i><rsup|\<top\>>*\<epsilon\>\<geq\>0|)>.>>>>
     </eqnarray*>
 
-    Now a quick picture shows that <math|<paragraphsign><around|(|V<rsub|j><rsup|\<top\>>*\<epsilon\>\<less\>0\|V<rsub|i><rsup|\<top\>>*\<epsilon\>\<geq\>0|)>=<frac|1|\<pi\>><math-up|arccos><around|(|V<rsub|i><rsup|\<top\>>*V<rsub|j>|)>> (recall that <math|\<epsilon\>/<around|\<\|\|\>|\<epsilon\>|\<\|\|\>><rsub|2>> is uniform on the Euclidean sphere). Using the fact that <math|V<rsub|i><rsup|\<top\>>*V<rsub|j>=\<Sigma\><rsub|i,j>> and <math|<math-up|arccos><around|(|x|)>=<frac|\<pi\>|2>-<math-up|arcsin><around|(|x|)>> conclude the proof.
+    Now a quick picture shows that <math|\<bbb-P\><around|(|V<rsub|j><rsup|\<top\>>*\<epsilon\>\<less\>0\|V<rsub|i><rsup|\<top\>>*\<epsilon\>\<geq\>0|)>=<frac|1|\<pi\>><math-up|arccos><around|(|V<rsub|i><rsup|\<top\>>*V<rsub|j>|)>> (recall that <math|\<epsilon\>/<around|\<\|\|\>|\<epsilon\>|\<\|\|\>><rsub|2>> is uniform on the Euclidean sphere). Using the fact that <math|V<rsub|i><rsup|\<top\>>*V<rsub|j>=\<Sigma\><rsub|i,j>> and <math|<math-up|arccos><around|(|x|)>=<frac|\<pi\>|2>-<math-up|arcsin><around|(|x|)>> conclude the proof.
   </proof>
 
   We can now get to the proof of Theorem <reference|th:GW>.
@@ -3405,7 +3405,7 @@
 
   Thus if one can ensure that <math|<cS><rsub|t>> is in (near) isotropic position, and <math|<around|\<\|\|\>|c<rsub|t>-<wide|c|^><rsub|t>|\<\|\|\>><rsub|2>> is small (say smaller than <math|0.1>), then the randomized center of gravity method (which replaces <math|c<rsub|t>> by <math|<wide|c|^><rsub|t>>) will converge at the same speed than the original center of gravity method.
 
-  Assuming that <math|<cS><rsub|t>> is in isotropic position one immediately obtains <math|<E>*<around|\<\|\|\>|c<rsub|t>-<wide|c|^><rsub|t>|\<\|\|\>><rsub|2><rsup|2>=<frac|n|N>>, and thus by Chebyshev's inequality one has <math|<paragraphsign><around|(|<around|\<\|\|\>|c<rsub|t>-<wide|c|^><rsub|t>|\<\|\|\>><rsub|2>\<gtr\>0.1|)>\<leq\>100*<frac|n|N>>. In other words with <math|N=O<around|(|n|)>> one can ensure that the randomized center of gravity method makes progress on a constant fraction of the iterations (to ensure progress at every step one would need a larger value of <math|N> because of an union bound, but this is unnecessary).
+  Assuming that <math|<cS><rsub|t>> is in isotropic position one immediately obtains <math|<E>*<around|\<\|\|\>|c<rsub|t>-<wide|c|^><rsub|t>|\<\|\|\>><rsub|2><rsup|2>=<frac|n|N>>, and thus by Chebyshev's inequality one has <math|\<bbb-P\><around|(|<around|\<\|\|\>|c<rsub|t>-<wide|c|^><rsub|t>|\<\|\|\>><rsub|2>\<gtr\>0.1|)>\<leq\>100*<frac|n|N>>. In other words with <math|N=O<around|(|n|)>> one can ensure that the randomized center of gravity method makes progress on a constant fraction of the iterations (to ensure progress at every step one would need a larger value of <math|N> because of an union bound, but this is unnecessary).
 
   Let us now consider the issue of putting <math|<cS><rsub|t>> in near-isotropic position. Let <math|<wide|\<Sigma\>|^><rsub|t>=<frac|1|N>*<big|sum><rsub|i=1><rsup|N><around|(|X<rsub|i>-<wide|c|^><rsub|t>|)>*<around|(|X<rsub|i>-<wide|c|^><rsub|t>|)><rsup|\<top\>>>. <cite|Rud99> showed that as long as <math|N=<wide|\<Omega\>|~><around|(|n|)>>, one has with high probability (say at least probability <math|1-1/n<rsup|2>>) that the set <math|<wide|\<Sigma\>|^><rsub|t><rsup|-1/2>*<around|(|<cS><rsub|t>-<wide|c|^><rsub|t>|)>> is in near-isotropic position.
 
@@ -3873,7 +3873,7 @@
     <associate|fig:nesterovacc|<tuple|3.6|42>>
     <associate|fig:one_ball|<tuple|3.4|39>>
     <associate|fig:pgd|<tuple|3.2|26>>
-    <associate|fig:pythagore|<tuple|3.1|?>>
+    <associate|fig:pythagore|<tuple|3.1|25>>
     <associate|fig:two_ball|<tuple|3.5|40>>
     <associate|finitedim|<tuple|2|15>>
     <associate|footnote-1.1|<tuple|1.1|14>>
